@@ -10,10 +10,18 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import zty.writetag.R;
+<<<<<<< HEAD
 import zty.writetag.Tool.Function.FileFunction;
 import zty.writetag.Tool.Function.LogFunction;
 import zty.writetag.Tool.Function.MusicFunction;
 import zty.writetag.Tool.Global.Variable;
+=======
+import zty.writetag.Tool.Common.CommonApplication;
+import zty.writetag.Tool.Function.FileFunction;
+import zty.writetag.Tool.Function.LogFunction;
+import zty.writetag.Tool.Function.MusicFunction;
+import zty.writetag.Tool.Gobal.Variable;
+>>>>>>> 66c2714dee62ce5e556a29c4b6353bc807449db5
 
 public class MainActivity extends Activity {
     @Override
@@ -36,6 +44,11 @@ public class MainActivity extends Activity {
         FileOutputStream fileOutputStream = FileFunction.GetFileOutputStreamFromFile(tempFilepath);
 
         try {
+<<<<<<< HEAD
+=======
+            fileOutputStream = new FileOutputStream(tempFilepath);
+
+>>>>>>> 66c2714dee62ce5e556a29c4b6353bc807449db5
             inputStream = getResources().openRawResource(R.raw.test);
 
             if (fileOutputStream != null) {
@@ -74,5 +87,10 @@ public class MainActivity extends Activity {
 
         MusicFunction.StorageMusicFileWithID3V2Tag(new File(ID3V2TagTempFilepath), ID3V2TagFilepath,
                 "歌名 songName id3v2", "歌手名 artistName id3v2", "专辑名 albumName id3v2");
+<<<<<<< HEAD
+=======
+
+        CommonApplication.getInstance().showToast("已写入标签", "MainActivity");
+>>>>>>> 66c2714dee62ce5e556a29c4b6353bc807449db5
     }
 }

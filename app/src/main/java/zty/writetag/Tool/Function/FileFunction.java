@@ -9,7 +9,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+<<<<<<< HEAD
 import zty.writetag.Tool.Global.Variable;
+=======
+import zty.writetag.Tool.Gobal.Variable;
+>>>>>>> 66c2714dee62ce5e556a29c4b6353bc807449db5
 
 /**
  * Created by zhengtongyu on 16/5/23.

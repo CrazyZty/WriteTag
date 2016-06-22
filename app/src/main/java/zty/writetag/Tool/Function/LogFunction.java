@@ -9,8 +9,13 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
+<<<<<<< HEAD
 import zty.writetag.Tool.Global.Constant;
 import zty.writetag.Tool.Global.Variable;
+=======
+import zty.writetag.Tool.Gobal.Constant;
+import zty.writetag.Tool.Gobal.Variable;
+>>>>>>> 66c2714dee62ce5e556a29c4b6353bc807449db5
 
 /**
  * Created by zhengtongyu on 16/5/23.

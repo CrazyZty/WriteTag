@@ -22,6 +22,7 @@ public class CommonFunction {
         return date;
     }
 
+<<<<<<< HEAD
     public static String GetDate(long time) {
         SimpleDateFormat simpleDateFormat =
                 new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
@@ -29,6 +30,8 @@ public class CommonFunction {
         return date;
     }
 
+=======
+>>>>>>> 66c2714dee62ce5e556a29c4b6353bc807449db5
     public static boolean notEmpty(CharSequence text) {
         return !isEmpty(text);
     }
