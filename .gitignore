@@ -1,6 +1,6 @@
 *.iml
 .idea
 .DS_Store
-.grable
+.gradle
 build
 app/build
