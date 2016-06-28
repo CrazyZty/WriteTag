@@ -8,4 +8,4 @@ CSDN：http://blog.csdn.net/u013182263/article/details/51504258
 
 博客园：http://www.cnblogs.com/ztysir/p/5513853.html
 
-个人博客：[CrazyZty.github.io](CrazyZty.github.io)
+个人博客：[CrazyZty.github.io](http:CrazyZty.github.io)
