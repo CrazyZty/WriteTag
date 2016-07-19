@@ -1,4 +1,4 @@
-package zty.writetag.Tool.Function;
+package com.Tool.Function;
 
 import android.app.Application;
 import android.os.Environment;
@@ -9,7 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import zty.writetag.Tool.Global.Variable;
+import com.Tool.Global.Variable;
 
 /**
  * Created by zhengtongyu on 16/5/23.

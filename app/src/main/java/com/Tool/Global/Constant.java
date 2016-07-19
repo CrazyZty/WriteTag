@@ -1,4 +1,4 @@
-package zty.writetag.Tool.Global;
+package com.Tool.Global;
 
 import zty.writetag.BuildConfig;
 

@@ -1,4 +1,4 @@
-package zty.writetag.Tool.Global;
+package com.Tool.Global;
 
 /**
  * Created by 郑童宇 on 2016/05/24.

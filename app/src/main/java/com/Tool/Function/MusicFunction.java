@@ -1,4 +1,4 @@
-package zty.writetag.Tool.Function;
+package com.Tool.Function;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -9,11 +9,17 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import rx.Observable;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 import zty.writetag.R;
-import zty.writetag.Tool.Function.FileFunction;
-import zty.writetag.Tool.Function.LogFunction;
-import zty.writetag.Tool.Function.MusicFunction;
-import zty.writetag.Tool.Global.Variable;
+
+import com.Tool.Common.CommonApplication;
+import com.Tool.Function.FileFunction;
+import com.Tool.Function.LogFunction;
+import com.Tool.Function.MusicFunction;
+import com.Tool.Global.Variable;
 
 public class MainActivity extends Activity {
     @Override
@@ -23,7 +29,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
-    public void writeTag(View v) {
+    // 目前只支持对无标签音乐写入标签，不支持覆盖标签
+    private void writeTag() {
         byte buffer[] = new byte[1024];
 
         String tempFilepath = Variable.StorageDirectoryPath + "temp.mp3";
@@ -45,6 +52,7 @@ public class MainActivity extends Activity {
 
                 FileFunction.CopyFile(tempFilepath, ID3V1TagTempFilepath);
                 FileFunction.CopyFile(tempFilepath, ID3V2TagTempFilepath);
+                FileFunction.DeleteFile(tempFilepath);
             }
         } catch (Exception e) {
             LogFunction.error("write file异常", e);
@@ -74,5 +82,31 @@ public class MainActivity extends Activity {
 
         MusicFunction.StorageMusicFileWithID3V2Tag(new File(ID3V2TagTempFilepath), ID3V2TagFilepath,
                 "歌名 songName id3v2", "歌手名 artistName id3v2", "专辑名 albumName id3v2");
+    }
+
+    public void writeTag(View v) {
+        Observable.create(new Observable.OnSubscribe<String>() {
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
+                writeTag();
+                subscriber.onCompleted();
+            }
+        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<String>() {
+                    @Override
+                    public void onCompleted() {
+                        CommonApplication.getInstance().showToast("写入标签成功", "MainActivity");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        CommonApplication.getInstance().showToast("写入标签失败", "MainActivity");
+                        LogFunction.error("写入标签异常", e.toString());
+                    }
+
+                    @Override
+                    public void onNext(String string) {
+                    }
+                });
     }
 }

@@ -1,4 +1,4 @@
-package zty.writetag.Tool.Function;
+package com.Tool.Function;
 
 import android.util.Log;
 
@@ -9,14 +9,14 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-import zty.writetag.Tool.Global.Constant;
-import zty.writetag.Tool.Global.Variable;
+import com.Tool.Global.Constant;
+import com.Tool.Global.Variable;
 
 /**
  * Created by zhengtongyu on 16/5/23.
  */
 public class LogFunction {
-    private static final String tag = "WriteTag";
+    private static final String tag = "AppLog";
 
     private static BufferedWriter errorOutputStream;
 

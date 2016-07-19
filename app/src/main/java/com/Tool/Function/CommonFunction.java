@@ -1,14 +1,14 @@
-package zty.writetag.Tool.Function;
+package com.Tool.Function;
 
 import android.app.ActivityManager;
 import android.content.Context;
 import android.util.Log;
 
+import com.Tool.Common.CommonApplication;
+
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.Locale;
-
-import zty.writetag.Tool.Common.CommonApplication;
 
 /**
  * Created by zhengtongyu on 16/5/23.
